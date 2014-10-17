@@ -6,7 +6,7 @@
 </head>
 <body data-ng-app="App">
   
-  <input type="text" data-ng-model="card" data-widget-card-flag><div>{{ cardflag }}</div>
+  <input type="text" data-ng-model="card" data-widget-card-flag><div data-ng-show="cardflag">your card flag is: {{ cardflag }}</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
   <script src="angular-ccflag.js"></script>
