@@ -3,17 +3,20 @@
 
   angular.module('App', [])
     .directive('widgetCardFlag', widgetCardFlag);
-  console.log('ok');
+  
   function widgetCardFlag($compile) {
     return {
       restrict: 'A',
+      scope: function(scope) {
+        console.log(scope);
+      },
       link: function(scope, el, attrs) {
 
         scope.cards = {
-          'Visa': [4],
-          'Mastercard': [51, 52, 53, 54, 55],
-          'American Express': [34, 37],
-          'Diners Club': [300, 301, 302, 303, 304, 305, 309, 2014, 2149, 36]
+          'visa': [4],
+          'mastercard': [51, 52, 53, 54, 55],
+          'amex': [34, 37],
+          'diners': [300, 301, 302, 303, 304, 305, 309, 2014, 2149, 36]
         };
 
         function flag(value) {
@@ -23,7 +26,6 @@
               var r = new RegExp('^' + scope.cards[card][i]);
               if (r.test(value)) {
                 scope.cardflag = card;
-                console.log(scope.cardflag);
                 return true;
               }
             }
