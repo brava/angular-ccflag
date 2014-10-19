@@ -2,4 +2,12 @@
 
 Directive to identify Credit Card Flag
 
-You can see an example [here](http://brava.github.io/angular-ccflag). Just type '41' for Visa, '53' for MasterCard, '300' for Diners Club or '34' for American Express to see it working.
+You can see an example [here](http://brava.github.io/angular-ccflag).
+
+Bin Code | Credit Card Flag
+---|---
+4 | Visa
+51-55 | MasterCard
+300-305, 309, 2014, 2149, 36 | Diners Club
+34, 37 | American Express
+6011, 644, 65 | Discover

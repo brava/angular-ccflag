@@ -18,6 +18,8 @@
           'discover': [6011, 644, 65]
         };
 
+        el[0].focus();
+
         function flag(value) {
           for (var card in scope.cards) {
             for (var i in scope.cards[card]) {
@@ -40,6 +42,7 @@
           var pos, digit, i, sub_total, sum = 0;
           var strlen = number.length;
           if (strlen < 13) {
+            scope.validation = false;
             return false;
           }
           for (i = 0; i < strlen; i++) {
@@ -55,13 +58,11 @@
             }
             sum += sub_total;
           }
-          if (!sum) {
-            return false;
-          }
-          if (sum % 10 === 0) {
+          if (!sum || sum % 10 === 0) {
             scope.validation = true;
             return true;
           }
+          scope.validation = false;
           return false;
         }
 
