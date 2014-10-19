@@ -56,12 +56,14 @@
             sum += sub_total;
           }
           if (!sum) {
+            scope.validation = false;
             return false;
           }
           if (sum % 10 === 0) {
             scope.validation = true;
             return true;
           }
+          scope.validation = false;
           return false;
         }
 
