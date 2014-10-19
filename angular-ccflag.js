@@ -18,6 +18,8 @@
           'discover': [6011, 644, 65]
         };
 
+        el[0].focus();
+
         function flag(value) {
           for (var card in scope.cards) {
             for (var i in scope.cards[card]) {
