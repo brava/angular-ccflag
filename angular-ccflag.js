@@ -42,6 +42,7 @@
           var pos, digit, i, sub_total, sum = 0;
           var strlen = number.length;
           if (strlen < 13) {
+            scope.validation = false;
             return false;
           }
           for (i = 0; i < strlen; i++) {
@@ -57,11 +58,7 @@
             }
             sum += sub_total;
           }
-          if (!sum) {
-            scope.validation = false;
-            return false;
-          }
-          if (sum % 10 === 0) {
+          if (!sum || sum % 10 === 0) {
             scope.validation = true;
             return true;
           }
